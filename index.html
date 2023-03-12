@@ -15,14 +15,14 @@
     />
     <title>Search API</title>
   </head>
-  <body class="bg-slate-300">
-    <div class="mt-40">
+  <body class="transition-all bg-slate-300">
+    <div class="mt-32">
       <form id="searchForm">
         <h1 class="text-center font-bold text-4xl py-2">SAPI</h1>
         <div class="flex flex-row justify-center items-center">
           <input
             id="searchInpt"
-            class="w-6/12 p-2 bg-slate-50 outline-none rounded-tl-md rounded-bl-md shadow-md"
+            class="w-9/12 md:w-6/12 p-2 bg-slate-50 outline-none rounded-tl-md rounded-bl-md shadow-md"
             placeholder="Search..."
             type="text"
             maxlength="120"
@@ -43,9 +43,9 @@
 
     <div id="resultsFilters" class="hidden mt-2">
       <div class="flex items-center justify-center">
-        <div class="bg-slate-50 rounded-md p-2.5 w-1/5">
+        <div class="bg-slate-50 rounded-md p-2.5 md:m-0 m-2 md:w-1/4 w-full">
           <h2 class="text-center text-lg font-bold">Filters</h2>
-          <div class="flex flex-row flex-wrap justify-center gap-2">
+          <div class="flex flex-row flex-wrap justify-center gap-4">
             <div>
               <label for="corsEnableDisable" class="text-md text-gray-700"
                 >Cors</label
@@ -117,7 +117,15 @@
           </div>
         </div>
       </div>
-      <div id="results"></div>
+      <div class="flex flex-nowrap flex-row justify-center items-center"><div class="md:w-3/4 w-full" id="results"></div></div>
+    </div>
+    <div>
+      <h2 class="font-bold text-xl text-center pt-6 pb-1">Random Api</h2>
+      <div
+        class="flex flex-col md:flex-row md:flex-nowrap justify-center items-center w-full gap-2 p-2"
+        id="randomApis"
+      >
+    <p class="font-bold text-xl">Loading...</p></div>
     </div>
 
     <style>
