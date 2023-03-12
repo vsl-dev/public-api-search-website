@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css"
+    />
+    <title>Search API</title>
+  </head>
+  <body class="bg-slate-300">
+    <div class="mt-40">
+      <form id="searchForm">
+        <h1 class="text-center font-bold text-4xl py-2">SAPI</h1>
+        <div class="flex flex-row justify-center items-center">
+          <input
+            id="searchInpt"
+            class="w-6/12 p-2 bg-slate-50 outline-none rounded-tl-md rounded-bl-md shadow-md"
+            placeholder="Search..."
+            type="text"
+            maxlength="120"
+            minlength="1"
+            required
+            value=""
+          />
+          <button
+            id="searchBtn"
+            class="bg-slate-50 py-2 px-4 rounded-br-md rounded-tr-md shadow-md"
+            type="submit"
+          >
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div id="resultsFilters" class="hidden mt-2">
+      <div class="flex items-center justify-center">
+        <div class="bg-slate-50 rounded-md p-2.5 w-1/5">
+          <h2 class="text-center text-lg font-bold">Filters</h2>
+          <div class="flex flex-row flex-wrap justify-center gap-2">
+            <div>
+              <label for="corsEnableDisable" class="text-md text-gray-700"
+                >Cors</label
+              >
+              <div
+                class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+              >
+                <input
+                  type="checkbox"
+                  name="corsEnableDisable"
+                  id="corsEnableDisable"
+                  class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                />
+                <label
+                  for="toggle"
+                  class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+                ></label>
+              </div>
+            </div>
+
+            <div>
+              <label for="httpsEnableDisable" class="text-md text-gray-700"
+                >Https</label
+              >
+              <div
+                class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+              >
+                <input
+                  type="checkbox"
+                  name="httpsEnableDisable"
+                  id="httpsEnableDisable"
+                  class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                />
+                <label
+                  for="toggle"
+                  class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+                ></label>
+              </div>
+            </div>
+
+            <div>
+              <label for="authEnableDisable" class="text-md text-gray-700"
+                >Auth</label
+              >
+              <div
+                class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+              >
+                <input
+                  type="checkbox"
+                  name="authEnableDisable"
+                  id="authEnableDisable"
+                  class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                />
+                <label
+                  for="toggle"
+                  class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+                ></label>
+              </div>
+            </div>
+
+            <div>
+              <label class="text-md text-gray-700" for="categoriesSelect"
+                >Categories</label
+              >
+              <select class="rounded-md w-full p-1" id="categoriesSelect">
+                <option selected>All</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="results"></div>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+
+      body {
+        font-family: "Tilt Neon", cursive;
+      }
+
+      .toggle-checkbox:checked {
+        @apply: right-0 border-green-400;
+        right: 0;
+        border-color: #68d391;
+      }
+      .toggle-checkbox:checked + .toggle-label {
+        @apply: bg-green-400;
+        background-color: #68d391;
+      }
+    </style>
+    <script src="./script.js"></script>
+    <br />
+    <footer class="p-1 pt-20 text-center">
+      <p>Created by <a href="https://github.com/vsl-dev">vsl-dev</a></p>
+    </footer>
+  </body>
+</html>
