@@ -285,3 +285,7 @@ const randomApi = async () => {
 window.onload = () => randomApi();
 
 console.log("https://github.com/vsl-dev");
+
+setInterval(() => {
+  randomApi();
+}, 10000);
